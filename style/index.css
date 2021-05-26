@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Roboto:wght@500&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+/* Body */
+
+.body {
+    background-color: rgb(173, 175, 236);
+}
+
+.body-card {
+    width: 95%;
+    height: 92vh;
+    margin: 4vh auto;
+    background-color: rgb(32, 33, 68);
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 20px;
+
+}
+
+
+/* Header */
+.header{
+    height: 10%;
+    /* border: 2px solid black; */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+
+.header h1 {
+    width: 30%;
+    text-align: left;
+    padding: 0 0 0 4rem;
+    margin: auto;
+    font-family: 'Kaushan Script', cursive;
+}
+
+.header .tab-container{
+    width: 70%;
+    height: 100%;
+    margin: auto;
+    padding: 0 2rem 0 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+
+.header .tab{
+    display: flex;
+    flex-direction: column;
+    width: 16%;
+    height: 100%;
+    margin: 0 1rem;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.header .tab-icon{
+    height: 65%;
+}
+
+.header .tab-name{
+    height: 35%;
+}
+
+.header .tab.active{
+    border-bottom: 2px solid rgb(55, 143, 243);
+    color: rgb(55, 143, 243);
+}
+
+.header .tab:hover{
+    border-bottom: 2px solid white;
+}
+
+/* Sections */
+.section{
+    height: 90%;
+}
+
+/* Home Section */
+.home {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+
+.home .intro{
+    width: 60%;
+}
+
+.home .dp{
+    width: 40%
+}
