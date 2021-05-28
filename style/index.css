@@ -1,35 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Roboto:wght@500&display=swap');
-@import url('https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Roboto:wght@100;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+
+:root{
+    --base-color: rgb(32, 33, 68);
+    --base-color-dark: rgb(20, 21, 43);
+    --base-color-light: rgb(30, 129, 243);
+    --base-color-lighter: rgb(129, 188, 255);
+    --base-color-contrast: rgb(30, 129, 243);
+    --base-color-hyperlink: rgb(240, 90, 245);
+
+    --base-color-font : rgb(255, 255, 255);
+
+    /* --base-font-style : 'Roboto', sans-serif; */
+    --base-font-style : 'Arvo', serif;
+    --cursive-font-style : 'Kaushan Script', cursive;
+
+
+    --header-height : 10%;
+    --content-height : 87.5%;
+    --footer-height : 2.5%;
+}
 
 * {
+    box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 /* Body */
 
+.hyperlink{
+    text-decoration: none;
+    color: var(--base-color-hyperlink);
+}
+
 .body {
-    background-color: rgb(173, 175, 236);
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+    background-color: var(--base-color);
+    color: var(--base-color-font);
+    font-family: var(--base-font-style);
 }
-
-.body-card {
-    width: 95%;
-    height: 92vh;
-    margin: 4vh auto;
-    background-color: rgb(32, 33, 68);
-    color: white;
-    font-family: 'Roboto', sans-serif;
-    border-radius: 20px;
-
-}
-
 
 /* Header */
 .header{
-    height: 12%;
+    height: var(--header-height);
     /* border: 2px solid black; */
-    background-color: rgb(20, 21, 43);
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
+    background-color: var(--base-color-dark);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -40,42 +57,49 @@
 .header .heading {
     width: 30%;
     text-align: left;
-    padding-left: 3rem;
+    padding-left: 2rem;
+    padding-right: 1.5rem;
     margin: auto;
-    font-family: 'Kaushan Script', cursive;
+    font-family: var(--cursive-font-style);
+    font-size: 2.5rem;
+    line-height: 1;
 }
 
 .header .short-heading{
+    width: 20%;
+    text-align: left;
     margin: auto;
-    font-family: 'Kaushan Script', cursive;
-    padding-left: 1rem;
+    font-family: var(--cursive-font-style);
+    font-size: 2.5rem;
     display: none;
 }
 
 .header .tab-container{
     width: 70%;
     height: 100%;
-    margin: auto;
-    padding: 0 2rem 0 0;
+    margin-top: auto;
+    /* padding: 0 2rem 0 0; */
     display: flex;
     flex-direction: row;
-    align-items: center;
+    /* align-items: center;
     align-content: center;
-    text-align: center;
+    text-align: center; */
 }
 
 .header .tab{
     display: flex;
     flex-direction: column;
-    width: 16%;
-    height: 100%;
-    margin: 0 1rem;
+    width: 14%;
+    height: 90%;
+    margin-top: auto;
     box-sizing: border-box;
     cursor: pointer;
+    border-bottom: 2px solid var(--base-color-dark);
+    transition: border-bottom 0.5s, height 0.5s;
 }
 
-.header .tab.fun-side-tab{
-    width: 20%;
+.header .tab.contact-tab{
+    width: 16%;
 }
 
 .header .tab-icon{
@@ -98,81 +122,59 @@
 
 .header .tab-name{
     height: 35%;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 }
 
 .header .tab.active{
-    border-bottom: 2px solid rgb(55, 143, 243);
-    color: rgb(55, 143, 243);
+    height: 100%;
+    border-bottom: 2px solid var(--base-color-light);
+    color: var(--base-color-light);
 }
 
 .header .tab.active svg{
-    fill: rgb(55, 143, 243);
+    fill: var(--base-color-light);
 }
 
 .header .tab:hover{
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid var(--base-color-font);
+    height: 100%;
+}
+
+.header .tab.active:hover{
+    border-bottom: 2px solid var(--base-color-lighter);
 }
 
 /* Sections */
-.section{
-    height: 88%;
+.section {
+    display: none;
+    height: var(--content-height);
     box-sizing: border-box;
+    transition: display 2s;
 }
 
-/* Home Section */
-.home {
+.section.show-section {
+    display: flex;
+    transition: display 2s;
+}
+
+/* Footer */
+.footer {
+    height: var(--footer-height);
+    background-color:black;
+    color: rgb(138, 138, 138);
+    font-size: 0.8rem;
+    font-weight: 100;
+    padding: 0 0.8rem;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    align-content: center;
-    text-align: center;
-    padding: 1rem 2rem;
 }
 
-.home .intro{
-    width: 60%;
-    text-align: left;
-    padding-left: 10rem;
-    box-sizing: border-box;
-    height: 100%;
-    padding-top: 10rem;
+.footer-text{
+    width: 50%;
+    margin: auto;
 }
 
-.home .intro h1{
-    font-family: 'Kaushan Script', cursive;
-    font-size: 3rem;
-    text-align: left;
-}
-
-.home .intro p{
-    padding: 1rem 0;
-    font-size: 1.2rem;
-}
-
-.home .dp{
-    width: 40%
-}
-
-/* The Fun Side */
-
-
-@media(max-width : 971px){
-    .header h1{
-        font-size: 1.7rem;
-    }
-}
-
-@media(max-width : 750px){
-    .header .short-heading{
-        display: grid;
-    }
-
-    .header .heading{
-        display: none;
-    }
-
-    .header .tab-name{
-        display: none;
-    }
+.view-count{
+    width : 50%;
+    text-align: right;
 }
