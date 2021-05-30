@@ -7,7 +7,8 @@
     --base-color-light: rgb(30, 129, 243);
     --base-color-lighter: rgb(129, 188, 255);
     --base-color-contrast: rgb(30, 129, 243);
-    --base-color-hyperlink: rgb(240, 90, 245);
+    --hyperlink-color: rgb(240, 90, 245);
+    --hyperlink-color-dark: rgb(225, 47, 231);
 
     --base-color-font : rgb(255, 255, 255);
 
@@ -27,12 +28,6 @@
     margin: 0;
 }
 /* Body */
-
-.hyperlink{
-    text-decoration: none;
-    color: var(--base-color-hyperlink);
-}
-
 .body {
     width: 100%;
     height: 100vh;
@@ -40,6 +35,20 @@
     background-color: var(--base-color);
     color: var(--base-color-font);
     font-family: var(--base-font-style);
+}
+
+.hyperlink{
+    text-decoration: none;
+    color: var(--hyperlink-color);
+    transition: color 0.5s;
+}
+
+.hyperlink:hover{
+    color: var(--hyperlink-color-dark);
+}
+
+.light-font{
+    color: var(--base-color-lighter);
 }
 
 /* Header */
@@ -145,11 +154,32 @@
 }
 
 /* Sections */
-.section {
-    display: none;
+.section-window{
+    width: 100%;
     height: var(--content-height);
+    overflow: hidden;
+    position: relative;
+}
+
+.sections-container{
+    height: 100%;
+    width: 700%;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    transition: left 1s;
+}
+
+.section {
+    display: flex;
+    width: 14.28%;
+    height: 100%;
     box-sizing: border-box;
     transition: display 2s;
+    padding: 1rem 2rem;
+    overflow: scroll;
 }
 
 .section.show-section {
