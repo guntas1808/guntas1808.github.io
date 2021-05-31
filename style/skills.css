@@ -1,7 +1,6 @@
 #skills-tab-content{
     flex-direction: column;
     padding: 4rem 6rem;
-    padding-bottom: 10rem;
     scroll-behavior: smooth;
 }
 
@@ -13,6 +12,8 @@
 
 #skills-tab-content .prog-lang{
     width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
 }
 
 #skills-tab-content .prog-lang-entry{

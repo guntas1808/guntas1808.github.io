@@ -28,12 +28,14 @@ function adjustSquareImage(img){
     }
 }
 
-function adjustSquareImagess(){
+function adjustSquareImages(){
     square_images.forEach(img => adjustSquareImage(img));
 }
 
 square_images.forEach(img => (img.onload = function(){adjustSquareImage(this)}));
-window.addEventListener('resize', adjustSquareImagess);
+window.addEventListener('resize', adjustSquareImages);
+console.log("running");
+adjustSquareImages();
 
 // Tab Switching Logic
 let tab_map = {

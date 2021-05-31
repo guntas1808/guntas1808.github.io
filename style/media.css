@@ -1,15 +1,5 @@
 @media(max-width : 810px){
-    #home-tab-content .social-links .icon{
-        display: block;
-        width: 100%;
-        height: 25%;
-        transition: width 1s;
-    }
-
-    #home-tab-content .social-links .icon:hover{
-        width: 110%;
-    }
-
+    /* Header */
     .header .short-heading{
         display: grid;
         padding: 0 1rem;
@@ -27,6 +17,24 @@
         /* display: none; */
         font-size: small;
     }
+
+    /* Home Tab */
+    #home-tab-content .social-links .icon{
+        display: block;
+        width: 100%;
+        height: 25%;
+        transition: width 1s;
+    }
+
+    #home-tab-content .social-links .icon:hover{
+        width: 110%;
+    }
+
+    /* Skilla Tab */
+
+    #skills-tab-content .prog-lang{
+        display: block;
+    }
 }
 
 @media(max-width : 700px){
@@ -39,7 +47,7 @@
     }
 
     .section {
-        height: 88%;
+        height: 85.5%;
     }
 
     .header .short-heading{
@@ -85,4 +93,8 @@
     #home-tab-content .intro{
 
     } */
+
+    #skills-tab-content{
+        padding: 1rem 2rem;
+    }
 }
