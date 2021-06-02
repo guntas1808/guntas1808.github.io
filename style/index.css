@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
 
 :root{
+    --loading-background: rgb(8, 8, 10);
+
     --base-color: rgb(24, 26, 66);
     --base-color-dark: rgb(17, 18, 36);
     --base-color-light: rgb(30, 129, 243);
@@ -34,9 +36,42 @@
 
 * {
     box-sizing: border-box;
+    z-index: 0;
     padding: 0;
     margin: 0;
 }
+/* Loading Screen */
+.loading-screen{
+    opacity: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--loading-background);
+    z-index: 1;
+}
+
+.loading-icon{
+    animation-name: loading-animation;
+}
+
+.disappear-animation{
+    animation-name: disappear;
+    animation-duration: 0.2s;
+    animation-fill-mode: both;
+}
+
+@keyframes disappear {
+    from{
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+
 /* Body */
 .body {
     width: 100%;

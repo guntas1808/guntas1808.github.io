@@ -1,3 +1,21 @@
+// Loading Screen
+
+
+function showPage(){
+    document.querySelector('.loading-screen').classList.add('disappear-animation');
+
+
+    document.querySelector('.image-frame').classList.add('appear-animate');
+    document.querySelector('.caption').classList.add('appear-animate');
+
+    document.querySelectorAll('.intro-span').forEach(elem => elem.classList.add('appear-animate'));
+    document.querySelectorAll('.letter-span').forEach(elem => elem.classList.add('letter-pop-animation'));
+
+    document.querySelectorAll('.social-icon').forEach(elem => elem.classList.add('social-links-animate'));
+}
+
+window.addEventListener('load', showPage);
+
 // Handling square elements
 let square_elements =  document.querySelectorAll('.square');
 
@@ -60,8 +78,8 @@ let tab_map = {
 let tabs = document.querySelectorAll('.tab');
 let sections = document.querySelectorAll('section');
 
-let skill_bars = document.querySelectorAll(".bar");
-let letter_spans = document.querySelectorAll(".letter-span");
+let skill_bars = document.querySelectorAll('.bar');
+let letter_spans = document.querySelectorAll('.letter-span');
 
 function activateTab(e){
     tabs.forEach(tab => tab.classList.remove('active'));
