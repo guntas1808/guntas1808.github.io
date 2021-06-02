@@ -2,16 +2,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
 
 :root{
-    --base-color: rgb(32, 33, 68);
-    --base-color-dark: rgb(20, 21, 43);
+    --base-color: rgb(24, 26, 66);
+    --base-color-dark: rgb(17, 18, 36);
     --base-color-light: rgb(30, 129, 243);
     --base-color-lighter: rgb(129, 188, 255);
     --base-color-contrast: rgb(30, 129, 243);
+    
     --hyperlink-color: rgb(240, 90, 245);
     --hyperlink-color-dark: rgb(225, 47, 231);
 
-    --base-color-font : rgb(255, 255, 255);
+    --base-font-color : rgb(214, 226, 236);
+    --base-font-color-dark : rgb(119, 119, 119);
 
+    --github-icon-color: rgb(0,0,0);
+    --linkedin-icon-color: rgb(10,102,194);
+    --instagram-icon-color: rgb(247,80,60);
+    --facebook-icon-color: rgb(45,136,255);
+
+    --skill-bar-background: rgb(17, 18, 36);
+    --skill-bar-fill: rgb(129, 188, 255);
+    
     /* --base-font-style : 'Roboto', sans-serif; */
     --base-font-style : 'Arvo', serif;
     --cursive-font-style : 'Kaushan Script', cursive;
@@ -33,7 +43,7 @@
     height: 100vh;
     margin: auto;
     background-color: var(--base-color);
-    color: var(--base-color-font);
+    color: var(--base-font-color);
     font-family: var(--base-font-style);
 }
 
@@ -112,8 +122,8 @@
 }
 
 .header .tab-icon{
-    height: 65%;
-    padding-top: 0.8rem;
+    height: 70%;
+    padding-top: 0.6rem;
     width: 100%;
     margin: auto;
     font-size: 1rem;
@@ -126,12 +136,12 @@
     padding: 0.5rem 0;
     box-sizing: border-box;
     margin: auto;
-    fill: white;
+    fill: var(--base-font-color);
 }
 
 .header .tab-name{
-    height: 35%;
-    font-size: 0.9rem;
+    height: 30%;
+    font-size: 0.7rem;
 }
 
 .header .tab.active{
@@ -145,7 +155,7 @@
 }
 
 .header .tab:hover{
-    border-bottom: 2px solid var(--base-color-font);
+    border-bottom: 2px solid var(--base-font-color);
     height: 100%;
 }
 

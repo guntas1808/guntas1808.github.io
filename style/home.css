@@ -1,73 +1,11 @@
 /* Home Section */
+
+/* Image and caption */
 #home-tab-content {
     flex-direction: row;
     align-items: center;
     align-content: center;
     text-align: center;
-}
-
-#home-tab-content .social-links{
-    width: 10%;
-    height: 70%;
-    display: flex;
-    flex-direction: column;
-    /* align-items: center;
-    align-content: center;
-    text-align: center; */
-    /* padding: 2rem 3rem; */
-    /* padding-right: 2rem; */
-}
-
-#home-tab-content .social-links .icon{
-    display: block;
-    width: 4.5rem;
-    height: 25%;
-    transition: width 0.5s;
-}
-
-#home-tab-content .social-links .icon:hover{
-    width: 5rem;
-}
-
-
-#home-tab-content .social-links .left-aligned{
-    margin-right: auto;
-}
-
-#home-tab-content .social-links .right-aligned{
-    margin-left: auto;
-}
-
-#home-tab-content .social-links .icon svg{
-    width: 100%;
-    height: 100%;
-    fill: white;
-    transition: fill 0.5s;
-}
-
-#home-tab-content .social-links .icon:hover svg{
-    fill: var(--base-color-light);
-}
-
-#home-tab-content .intro{
-    width: 65%;
-    /* height: 50%; */
-    text-align: left;
-    padding: 0 3rem;
-    margin: auto ;
-}
-
-#home-tab-content .intro h1{
-    font-family: 'Kaushan Script', cursive;
-    font-size: 4rem;
-    color: var(--base-color-contrast);
-    text-align: left;
-}
-
-#home-tab-content .intro p{
-    padding: 1rem 0;
-    font-size: 1.2rem;
-    line-height: 1.5;
 }
 
 #home-tab-content .image{
@@ -76,8 +14,6 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    /* border: 2px solid black; */
-    /* border-radius: 50%; */
 }
 
 #home-tab-content .image .image-frame{
@@ -87,6 +23,7 @@
     position: relative;
     border: 3px solid var(--base-color-contrast);
     border-radius: 50%;
+    opacity: 0;
 }
 
 #home-tab-content .image img{
@@ -101,13 +38,147 @@
     padding-top: 1rem;
     width: 100%;
     margin-bottom: auto;
+    opacity: 0;
+    animation-delay: 0.3s;
 }
+
 
 #home-tab-content .image .caption .main{
     padding: 1rem 0;
-    font-size: 2rem;
+    font-size: 1.6rem;
 }
 
 #home-tab-content .image .caption .sub{
     color: var(--base-color-lighter);
+    font-size: 0.9rem;
+}
+
+/* Introduction */
+#home-tab-content .intro{
+    width: 65%;
+    text-align: left;
+    padding: 0 3rem;
+    margin: auto ;
+}
+
+#home-tab-content .intro h1{
+    font-family: 'Kaushan Script', cursive;
+    font-size: 0;
+    color: var(--base-color-contrast);
+    text-align: left;
+}
+
+#home-tab-content .intro .letter-pop-animate{
+    animation-name: letter-pop;
+    animation-delay: calc(0.1s * var(--letter-idx));
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes letter-pop {
+    from {font-size: 0;}
+    to {font-size: 4rem;}
+}
+
+#home-tab-content .intro .dummy-span{
+    font-size: 4rem;
+}
+
+#home-tab-content .intro p{
+    padding: 1rem 0;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+#home-tab-content #intro-p1{
+    animation-delay: 1.2s;
+}
+
+#home-tab-content #intro-p2{
+    animation-delay: 1.4s;
+}
+
+#home-tab-content #intro-p3{
+    animation-delay: 1.6s;
+}
+
+/* Socail Media Links */
+#home-tab-content .social-links{
+    width: 10%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#home-tab-content .social-links .icon{
+    display: block;
+    width: 4.5rem;
+    height: 25%;
+    margin: 0 calc((100% - 4.5rem) / 2);
+    transition: width 0.5s, margin-left 0.5s;
+    transform: translateX(9rem);
+    animation: social-links-enter 1s , social-links-diverge 0.7s ease-out 1s;
+    animation-fill-mode: both;
+}
+
+@keyframes social-links-enter {
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes social-links-diverge{
+    to {
+        margin: var(--margin);
+    }
+}
+
+#home-tab-content .social-links .icon:hover{
+    width: 5rem;
+}
+
+
+#home-tab-content .social-links .left-aligned{
+    --margin: 0 calc(100% - 4.5rem) 0 0;
+}
+
+#home-tab-content .social-links .right-aligned{
+    --margin: 0 0 0 calc(100% - 4.5rem);
+}
+
+#home-tab-content .social-links .icon svg{
+    width: 100%;
+    height: 100%;
+    fill: var(--base-font-color);
+    transition: fill 0.5s;
+}
+
+#home-tab-content .social-links .github-icon:hover svg{
+    fill: var(--github-icon-color);
+}
+
+#home-tab-content .social-links .linkedin-icon:hover svg{
+    fill: var(--linkedin-icon-color);
+}
+
+#home-tab-content .social-links .facebook-icon:hover svg{
+    fill: var(--facebook-icon-color);
+}
+
+#home-tab-content .social-links .instagram-icon:hover svg{
+    fill: var(--instagram-icon-color);
+}
+
+.appear-animate{
+    opacity: 0;
+    animation: appear;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+}
+
+@keyframes appear {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }

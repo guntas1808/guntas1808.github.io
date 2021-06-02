@@ -8,24 +8,34 @@ function resizeSquareElements(){
 resizeSquareElements();
 window.addEventListener('resize', resizeSquareElements);
 
-// Adjusting image in a square frame
-let square_images = document.querySelectorAll('.square-image');
+// Adjusting image at the centre of a frame and fill the frame
+let square_images = document.querySelectorAll('.centre-image');
 
 function adjustSquareImage(img){
-    console.log(img.clientWidth,img.clientHeight);
-    console.log('adjusting ', img);
+    // console.log(img.clientWidth,img.clientHeight);
+    // console.log('adjusting ', img);
     let overflow;
-    if(img.offsetWidth < img.offsetHeight){
+    let img_height = img.offsetHeight;
+    let img_width = img.offsetWidth;
+    let img_ratio = img_width/img_height;
+    let frame_height = img.parentNode.offsetHeight;
+    let frame_width = img.parentNode.offsetWidth;
+    let frame_ratio = frame_width/frame_height;
+
+    // console.log(img_width, img_height, frame_width, frame_height);
+    if(frame_ratio > img_ratio){
         img.style.setProperty('height', 'initial');
         img.style.width = '100%';
-        overflow = img.offsetHeight - img.offsetWidth;
+        overflow = img.offsetHeight - frame_height;
         img.style.top = '-' + (overflow/2) + 'px';
-    }else if(img.offsetWidth > img.offsetHeight){
+    }else if(frame_ratio < img_ratio){
         img.style.setProperty('width', 'initial');
         img.style.height = '100%';
-        overflow = img.offsetWidth - img.offsetHeight;
+        overflow = img.offsetWidth - frame_width;
         img.style.left = '-' + (overflow/2)+ 'px';
     }
+
+    // console.log(img.offsetWidth, img.offsetHeight, img.parentNode.offsetWidth, img.parentNode.offsetHeight);
 }
 
 function adjustSquareImages(){
@@ -34,7 +44,7 @@ function adjustSquareImages(){
 
 square_images.forEach(img => (img.onload = function(){adjustSquareImage(this)}));
 window.addEventListener('resize', adjustSquareImages);
-console.log("running");
+
 adjustSquareImages();
 
 // Tab Switching Logic
@@ -50,6 +60,9 @@ let tab_map = {
 let tabs = document.querySelectorAll('.tab');
 let sections = document.querySelectorAll('section');
 
+let skill_bars = document.querySelectorAll(".bar");
+let letter_spans = document.querySelectorAll(".letter-span");
+
 function activateTab(e){
     tabs.forEach(tab => tab.classList.remove('active'));
 
@@ -59,10 +72,17 @@ function activateTab(e){
     // console.log(document.getElementById('sections-container').style.left);
     let tab_class = `${this.id}-content`;
     console.log(tab_class);
+
     if(tab_class == 'skills-tab-content'){
-        document.querySelectorAll(".bar").forEach(bar => bar.classList.add('bar-animate'));
+        skill_bars.forEach(bar => bar.classList.add('bar-animate'));
     }else{
-        document.querySelectorAll(".bar-animate").forEach(bar => bar.classList.remove('bar-animate'));
+        skill_bars.forEach(bar => bar.classList.remove('bar-animate'));
+    }
+
+    if(tab_class == 'home-tab-content'){
+        letter_spans.forEach(letter_span => letter_span.classList.add('letter-pop-animation'));
+    }else{
+        letter_spans.forEach(letter_span => letter_span.classList.remove('letter-pop-animation'));
     }
 
     document.getElementById('sections-container').style.left = '-' + tab_map[`${this.id}-content`]*100 + '%';
