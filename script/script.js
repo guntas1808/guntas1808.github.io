@@ -9,7 +9,7 @@ function showPage(){
     document.querySelector('.caption').classList.add('appear-animate');
 
     document.querySelectorAll('.intro-span').forEach(elem => elem.classList.add('appear-animate'));
-    document.querySelectorAll('.letter-span').forEach(elem => elem.classList.add('letter-pop-animation'));
+    document.querySelectorAll('.letter-span').forEach(elem => elem.classList.add('letter-pop-animate'));
 
     document.querySelectorAll('.social-icon').forEach(elem => elem.classList.add('social-links-animate'));
 }
@@ -98,9 +98,23 @@ function activateTab(e){
     }
 
     if(tab_class == 'home-tab-content'){
-        letter_spans.forEach(letter_span => letter_span.classList.add('letter-pop-animation'));
+
+        document.querySelector('.image-frame').classList.add('appear-animate');
+        document.querySelector('.caption').classList.add('appear-animate');
+    
+        document.querySelectorAll('.intro-span').forEach(elem => elem.classList.add('appear-animate'));
+        document.querySelectorAll('.letter-span').forEach(elem => elem.classList.add('letter-pop-animate'));
+    
+        // document.querySelectorAll('.social-icon').forEach(elem => elem.classList.add('social-links-animate'));
     }else{
-        letter_spans.forEach(letter_span => letter_span.classList.remove('letter-pop-animation'));
+
+        document.querySelector('.image-frame').classList.remove('appear-animate');
+        document.querySelector('.caption').classList.remove('appear-animate');
+    
+        document.querySelectorAll('.intro-span').forEach(elem => elem.classList.remove('appear-animate'));
+        document.querySelectorAll('.letter-span').forEach(elem => elem.classList.remove('letter-pop-animate'));
+    
+        // document.querySelectorAll('.social-icon').forEach(elem => elem.classList.remove('social-links-animate'));
     }
 
     document.getElementById('sections-container').style.left = '-' + tab_map[`${this.id}-content`]*100 + '%';

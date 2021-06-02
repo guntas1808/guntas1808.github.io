@@ -111,7 +111,7 @@
     height: 70%;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 #home-tab-content .social-links .social-icon{
@@ -124,7 +124,7 @@
 }
 
 .social-links-animate{
-    animation: social-links-enter 1s , social-links-diverge 0.7s ease-out 1s;
+    animation: social-links-enter 0.7s ease-out 1.5s, social-links-diverge 0.7s ease-out 2.2s;
     animation-fill-mode: both;
 }
 
