@@ -61,7 +61,7 @@
 }
 
 .disappear-animation{
-    animation: disappear 0.05s, offscreen 0.1s linear 0.1s;
+    animation: offscreen 0.2s;
     animation-duration: 0.2s;
     animation-fill-mode: both;
 }

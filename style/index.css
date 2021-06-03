@@ -8,8 +8,8 @@
     --base-color-lighter: rgb(129, 188, 255);
     --base-color-contrast: rgb(30, 129, 243);
     
-    --hyperlink-color: rgb(240, 90, 245);
-    --hyperlink-color-dark: rgb(225, 47, 231);
+    --hyperlink-color: rgb(1, 209, 209);
+    --hyperlink-color-dark: rgb(0, 255, 221);
 
     --base-font-color : rgb(214, 226, 236);
     --base-font-color-dark : rgb(119, 119, 119);
@@ -20,7 +20,7 @@
     --facebook-icon-color: rgb(45,136,255);
 
     --skill-bar-background: rgb(17, 18, 36);
-    --skill-bar-fill: rgb(129, 188, 255);
+    --skill-bar-fill: rgb(164, 209, 0);
     
     /* --base-font-style : 'Roboto', sans-serif; */
     --base-font-style : 'Arvo', serif;
@@ -93,6 +93,25 @@
     font-family: var(--cursive-font-style);
     font-size: 2.5rem;
     display: none;
+}
+
+.header .heading-text{
+    /* color: rgb(255, 255, 93); */
+    /* transform: translateX(-400px); */
+}
+
+.header .heading-text.heading-entry-animate{
+    animation: heading-entry 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes heading-entry {
+    from {
+        color: white;
+    }
+    to {
+        color: yellow;
+    }
 }
 
 .header .tab-container{
@@ -182,6 +201,7 @@
     position: absolute;
     left: 0;
     transition: left 1s;
+    padding-bottom: 1rem;
 }
 
 .section {

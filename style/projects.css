@@ -13,8 +13,9 @@
 #projects-tab-content .projects{
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(4, 25%);
-    grid-column-gap: 2rem;
+    grid-template-columns: repeat(4, calc(25% - (3rem / 4)));
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
 }
 
 #projects-tab-content .project-entry{
@@ -40,7 +41,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
 #projects-tab-content .project-details{
@@ -70,6 +71,7 @@
     padding: 1rem 1rem;
     margin: 0.5rem 0.5rem;
     transition: color 1s;
+    border-bottom: 2px solid var(--hyperlink-color);
 }
 
 #projects-tab-content .project-links a:hover{

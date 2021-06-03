@@ -80,6 +80,24 @@
     to {font-size: 4rem;}
 }
 
+#home-tab-content .intro .letter-span{
+    display: inline;
+    transition: color 0.4s;
+}
+
+#home-tab-content .intro .letter-span:hover{
+    color: rgb(0, 59, 253);
+}
+
+@keyframes scale-up {
+    from {
+        font-size: 4rem;
+    }
+    to {
+        font-size: 5rem;
+    }
+}
+
 #home-tab-content .intro .dummy-span{
     font-size: 4rem;
 }
