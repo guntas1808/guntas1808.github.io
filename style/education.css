@@ -1,18 +1,20 @@
 #education-tab-content{
     flex-direction: column;
+    padding-bottom: 0;
 }
 
 #education-tab-content .education-content{
     display: grid;
-    grid-template-columns: repeat(3, calc(33.33% - (0.5rem / 3)));
+    grid-template-columns: repeat(3, calc(33.33% - (1rem / 3)));
     grid-column-gap: 0.5rem;
     width: 100%;
+    height: 100%;
 }
 
 .education-entry{
     opacity: 0.8;
     width: 100%;
-    height: 80vh;
+    height: 100%;
     overflow: hidden;
     background-repeat: no-repeat;
     background-position: center;
@@ -23,7 +25,7 @@
 .education-entry-content{
     opacity: 0.8;
     width: 80%;
-    height: 80%;
+    height: 90%;
     background-color: white;
     margin: auto;
     color: rgb(0, 0, 0);
@@ -48,7 +50,7 @@
 
 .education-entry-name{
     /* height: 30%; */
-    padding-bottom: 2rem;
+    padding-bottom: 0.5rem;
     font-weight: bold;
 }
 
@@ -63,10 +65,14 @@
     font-size: 1.4rem;
 }
 
+.education-entry-details strong{
+    line-height: 2;
+}
+
 .education-entry-courses{
     /* height: 50%; */
     font-size: 1.1rem;
-    padding-top: 1rem;
+    padding-top: 0.5rem;
 }
 
 .education-entry-courses ul{

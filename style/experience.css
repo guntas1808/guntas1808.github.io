@@ -1,0 +1,66 @@
+#experience-tab-content{
+    flex-direction: column;
+    padding: 2rem 8rem;
+}
+
+#experience-tab-content .experience-entry{
+    width: 50%;
+    margin: 0 auto;
+    background-color: var(--base-color-dark);
+}
+
+#experience-tab-content .experience-entry-name{
+    height: 10rem;
+    opacity: 0.9;
+    position: relative;
+    /* border: 5px solid var(--base-color-dark); */
+}
+
+#experience-tab-content .experience-entry-image{
+    width: 100%;
+    height: 100%;
+}
+
+#amazon {
+    background-image: url('../images/amazon2.jpeg');
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#iitkcse{
+    background-image: url('../images/cse-iitk.jpeg');
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#experience-tab-content .white-screen{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: white;
+    opacity: 0.1;
+}
+
+#experience-tab-content .experience-entry-name .name{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0.5rem 1rem;
+    font-size: 2rem;
+    color: var(--base-color-dark);
+    z-index: 2;
+}
+
+#experience-tab-content .experience-entry-description{
+    padding: 1rem 1rem;
+    font-size: 1.5rem;
+}
+
+#experience-tab-content .experience-entry-time{
+    font-size: 0.9rem;
+    font-weight: 100;
+}
