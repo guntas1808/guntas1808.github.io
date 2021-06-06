@@ -89,13 +89,15 @@
 
 .experience-entry .date{
     width: 25%;
-    text-align: right;
+    text-align: center;
     padding: 2rem 1rem 0 0;
 
 }
 
 .experience-entry .date p{
     transform: translateY(-50%);
+    padding: 0.5rem 0;
+    background-color: var(--base-color-dark-faded);
 }
 
 .experience-entry .timeline{
@@ -115,7 +117,7 @@
     /* height: 40%; */
     width: 80%;
     overflow:  hidden;
-    border: 2px solid var(--base-color-light);
+    border: 2px solid var(--base-color-dark);
     border-radius: 50%;
     margin: auto;
     background-position: center;
@@ -139,8 +141,8 @@
 .experience-entry .timeline .bottom-line svg{
     width: 100%;
     height: 100%;
-    stroke: var(--base-color-light);
-    fill: var(--base-color-light);
+    stroke: var(--base-color-dark);
+    fill: var(--base-color-dark);
     stroke-width: 2px;
 }
 
@@ -154,16 +156,16 @@
     width: 3rem;
     left: 0;
     top: 0;
-    stroke: var(--base-color-light);
+    stroke: var(--base-color-dark);
     stroke-width: 2px;
-
+    transform: translateY(-50%);
 }
 
 .experience-entry .entry-description{
     margin: 0 1rem 1rem 1rem;
     padding: 1rem;
-    border: 2px solid var(--base-color-light);
-    background-color: var(--base-color-dark);
+    border: 2px solid var(--base-color-dark);
+    background-color: var(--base-color-dark-faded);
 }
 
 .entry-description h1{

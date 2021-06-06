@@ -21,7 +21,7 @@
     margin-top: auto;
     overflow: hidden;
     position: relative;
-    border: 3px solid var(--base-color-contrast);
+    border: 3px solid var(--base-color-dark);
     border-radius: 50%;
     opacity: 0;
     background-image: url(../images/IMG_6334.JPG);
@@ -89,9 +89,9 @@
     transition: color 0.4s;
 }
 
-#home-tab-content .intro .letter-span:hover{
+/* #home-tab-content .intro .letter-span:hover{
     color: rgb(0, 59, 253);
-}
+} */
 
 @keyframes scale-up {
     from {
@@ -107,9 +107,11 @@
 }
 
 #home-tab-content .intro p{
-    padding: 1rem 0;
+    padding: 2rem;
+    margin: 0 1rem;
     font-size: 1.1rem;
     line-height: 1.5;
+    background-color: var(--base-color-dark-faded);
 }
 
 #home-tab-content #intro-p1{

@@ -1,4 +1,6 @@
+// ****************************************************************************************************
 //**************************************** Loading Screen *********************************************
+// ****************************************************************************************************
 function showPage(){
     document.querySelector('.loading-screen').classList.add('disappear-animation');
 
@@ -14,7 +16,9 @@ function showPage(){
 
 window.addEventListener('load', showPage);
 
+// *****************************************************************************************************
 //************************************ Handling square elements ****************************************
+// *****************************************************************************************************
 let square_elements =  document.querySelectorAll('.square');
 
 function resizeSquareElements(){
@@ -24,8 +28,9 @@ function resizeSquareElements(){
 resizeSquareElements();
 window.addEventListener('resize', resizeSquareElements);
 
-//**************************************** Experience Timeline  ****************************************
-
+// ******************************************************************************************************
+//**************************************** Experience Timeline  *****************************************
+// ******************************************************************************************************
 let experience_entries= document.querySelectorAll('.experience-entry')
 
 function setTimelineElementDimensions(experience_entry){
@@ -43,7 +48,7 @@ function setTimelineElementDimensions(experience_entry){
     
     console.log(timeline_elem.children[2]);
 
-    timeline_elem.style.height = '0px';             //set the timeline height to 0 to let description div adjust its height
+    bottom_line_elem.style.height = '0px';             //set the timeline height to 0 to let description div adjust its height
     description_elem = experience_entry.children[2]; //get updated description div
 
     timeline_elem.style.height = Math.max(image_width*1.7 , date_elem.offsetHeight, description_elem.offsetHeight) + 'px';
@@ -62,11 +67,12 @@ function adjustTimeline(){
     experience_entries.forEach(experience_entry => setTimelineElementDimensions(experience_entry));
 }
 
-adjustTimeline();
-
 window.addEventListener('resize', e => adjustTimeline());
+window.addEventListener('load', adjustTimeline);
 
+// **********************************************************************************************************
 //*********************** Adjusting image at the centre of a frame and fill the frame ***********************
+//***********************************************************************************************************
 let square_images = document.querySelectorAll('.centre-image');
 
 function adjustSquareImage(img){
@@ -105,7 +111,9 @@ window.addEventListener('resize', adjustSquareImages);
 
 adjustSquareImages();
 
+// *********************************************************************************************************
 //**************************************** Tab Switching Logic *********************************************
+// *********************************************************************************************************
 let tab_map = {
     'home-tab-content' : 0,
     'skills-tab-content' : 1,

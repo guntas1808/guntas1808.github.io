@@ -11,7 +11,7 @@
     /* height: 10%; */
     margin: auto;
     font-size: 3rem;
-    color: var(--base-color-light);
+    color: var(--base-color-contrast);
 }
 
 #contact-tab-content .contacts{
@@ -27,6 +27,8 @@
     margin: auto;
     display: flex;
     flex-direction: column;
+    padding: 0 2rem;
+    background-color: var(--base-color-dark-faded);
 }
 
 #contact-tab-content .contacts .contact-details p{

@@ -4,22 +4,23 @@
 :root{
     --base-color: rgb(24, 26, 66);
     --base-color-dark: rgb(17, 18, 36);
+    --base-color-dark-faded: rgba(17, 18, 36, 0.699);
     --base-color-light: rgb(30, 129, 243);
     --base-color-lighter: rgb(129, 188, 255);
-    --base-color-contrast: rgb(30, 129, 243);
+    --base-color-contrast: rgb(188, 253, 7);
     
     --hyperlink-color: rgb(1, 209, 209);
     --hyperlink-color-dark: rgb(0, 255, 221);
 
     --base-font-color : rgb(214, 226, 236);
-    --base-font-color-dark : rgb(119, 119, 119);
+    --base-font-color-dark : rgb(150, 150, 150);
 
     --github-icon-color: rgb(0,0,0);
     --linkedin-icon-color: rgb(10,102,194);
     --instagram-icon-color: rgb(247,80,60);
     --facebook-icon-color: rgb(45,136,255);
 
-    --skill-bar-background: rgb(17, 18, 36);
+    --skill-bar-background: rgb(75, 90, 20);
     --skill-bar-fill: rgb(164, 209, 0);
     
     /* --base-font-style : 'Roboto', sans-serif; */
@@ -220,7 +221,7 @@
     position: absolute;
     left: 0;
     transition: left 1s;
-    padding-bottom: 1rem;
+    /* padding-bottom: 1rem; */
 }
 
 .section {
@@ -231,6 +232,10 @@
     padding: 1rem 2rem;
     overflow-y: auto;
     overflow-x: hidden;
+    background-image: url('../images/main-background.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .section.show-section {
