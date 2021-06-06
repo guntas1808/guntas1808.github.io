@@ -1,6 +1,4 @@
-// Loading Screen
-
-
+//**************************************** Loading Screen *********************************************
 function showPage(){
     document.querySelector('.loading-screen').classList.add('disappear-animation');
 
@@ -16,7 +14,7 @@ function showPage(){
 
 window.addEventListener('load', showPage);
 
-// Handling square elements
+//************************************ Handling square elements ****************************************
 let square_elements =  document.querySelectorAll('.square');
 
 function resizeSquareElements(){
@@ -26,12 +24,54 @@ function resizeSquareElements(){
 resizeSquareElements();
 window.addEventListener('resize', resizeSquareElements);
 
-// Adjusting image at the centre of a frame and fill the frame
+//**************************************** Experience Timeline  ****************************************
+
+let experience_entries= document.querySelectorAll('.experience-entry')
+
+function setTimelineElementDimensions(experience_entry){
+    let date_elem = experience_entry.children[0];
+    let timeline_elem = experience_entry.children[1];
+    let description_elem = experience_entry.children[2];
+
+    let image_elem = timeline_elem.children[0];
+    let bottom_line_elem = timeline_elem.children[1];
+    let horizontal_line_elem = timeline_elem.children[2];
+
+    let image_width = timeline_elem.children[0].offsetWidth;
+    
+    image_elem.style.height = image_width + 'px';
+    
+    console.log(timeline_elem.children[2]);
+
+    timeline_elem.style.height = '0px';             //set the timeline height to 0 to let description div adjust its height
+    description_elem = experience_entry.children[2]; //get updated description div
+
+    timeline_elem.style.height = Math.max(image_width*1.7 , date_elem.offsetHeight, description_elem.offsetHeight) + 'px';
+    bottom_line_elem.style.height = Math.max(image_width*0.7, timeline_elem.offsetHeight-image_width) + 'px';
+
+    let image_margin = timeline_elem.offsetWidth - image_width;
+    horizontal_line_elem.style.left = (image_width + image_margin/2) + 'px';
+    horizontal_line_elem.style.top = image_width/2 + 'px';
+
+    date_elem.style.paddingTop = image_width/2 + 'px';
+
+    console.log(timeline_elem.offsetHeight, timeline_elem.children[0].offsetHeight, timeline_elem.children[1].offsetHeight );
+}
+
+function adjustTimeline(){
+    experience_entries.forEach(experience_entry => setTimelineElementDimensions(experience_entry));
+}
+
+adjustTimeline();
+
+window.addEventListener('resize', e => adjustTimeline());
+
+//*********************** Adjusting image at the centre of a frame and fill the frame ***********************
 let square_images = document.querySelectorAll('.centre-image');
 
 function adjustSquareImage(img){
-    // console.log(img.clientWidth,img.clientHeight);
-    // console.log('adjusting ', img);
+    console.log(img.clientWidth,img.clientHeight);
+    console.log('adjusting ', img);
     let overflow;
     let img_height = img.offsetHeight;
     let img_width = img.offsetWidth;
@@ -40,7 +80,7 @@ function adjustSquareImage(img){
     let frame_width = img.parentNode.offsetWidth;
     let frame_ratio = frame_width/frame_height;
 
-    // console.log(img_width, img_height, frame_width, frame_height);
+    console.log(img_width, img_height, frame_width, frame_height);
     if(frame_ratio > img_ratio){
         img.style.setProperty('height', 'initial');
         img.style.width = '100%';
@@ -53,7 +93,7 @@ function adjustSquareImage(img){
         img.style.left = '-' + (overflow/2)+ 'px';
     }
 
-    // console.log(img.offsetWidth, img.offsetHeight, img.parentNode.offsetWidth, img.parentNode.offsetHeight);
+    console.log(img.offsetWidth, img.offsetHeight, img.parentNode.offsetWidth, img.parentNode.offsetHeight);
 }
 
 function adjustSquareImages(){
@@ -65,7 +105,7 @@ window.addEventListener('resize', adjustSquareImages);
 
 adjustSquareImages();
 
-// Tab Switching Logic
+//**************************************** Tab Switching Logic *********************************************
 let tab_map = {
     'home-tab-content' : 0,
     'skills-tab-content' : 1,

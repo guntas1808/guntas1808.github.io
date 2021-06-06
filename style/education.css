@@ -36,15 +36,15 @@
     flex-direction: column;
 }
 
-#iitk{
+#education-tab-content #iitk{
     background-image: url('../images/iitk2.jpeg');
 }
 
-#gps-kota{
+#education-tab-content #gps-kota{
     background-image: url('../images/gpskota.webp');
 }
 
-#ca-bhilwara{
+#education-tab-content #ca-bhilwara{
     background-image: url('../images/cabhilwara.jpeg');
 }
 

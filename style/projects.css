@@ -34,7 +34,41 @@
     height: 10rem;
     border: 5px solid var(--base-color-dark);
     overflow: hidden;
-    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#projects-tab-content #os .project-image{
+    background-image: url('../images/os.jpeg');
+}
+
+#projects-tab-content #compiler .project-image{
+    background-image: url('../images/compiler.jpeg');
+}
+
+#projects-tab-content #scrabble .project-image{
+    background-image: url('../images/scrabble.jpeg');
+}
+
+#projects-tab-content #cryptography .project-image{
+    background-image: url('../images/cryptography.jpeg');
+}
+
+#projects-tab-content #velodrome .project-image{
+    background-image: url('../images/velodrome.png');
+}
+
+#projects-tab-content #healthbuddy .project-image{
+    background-image: url('../images/healthbuddy.jpeg');
+}
+
+#projects-tab-content #dsa .project-image{
+    background-image: url('../images/dsa.jpeg');
+}
+
+#projects-tab-content #p5js .project-image{
+    background-image: url('../images/p5js.png');
 }
 
 #projects-tab-content .project-image img{

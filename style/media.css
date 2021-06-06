@@ -35,6 +35,12 @@
     #skills-tab-content .prog-lang{
         display: block;
     }
+
+
+    /* Experience Tab */
+    #experience-tab-content .experience-entry{
+        width: 100%;
+    }
 }
 
 @media(max-width : 700px){
