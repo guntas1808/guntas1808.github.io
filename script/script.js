@@ -27,7 +27,32 @@ function resizeSquareElements(){
 
 resizeSquareElements();
 window.addEventListener('resize', resizeSquareElements);
+// ******************************************************************************************************
+//**************************************** Home Section  *****************************************
+// ******************************************************************************************************
+let home_section_content = document.querySelector('#home-tab-content');
 
+function setHomeSectionLines(){
+    let intro_elem_style = getComputedStyle(home_section_content.children[1]);
+    let intro_para_style = getComputedStyle(home_section_content.children[1].children[1])
+    let image_frame_elem = home_section_content.children[0].children[0];
+    let horizontal_line_elem = image_frame_elem.children[0];
+    let vertical_line_elem = image_frame_elem.children[1];
+
+    horizontal_line_elem.style.left = (image_frame_elem.offsetWidth-2) + 'px';
+    horizontal_line_elem.style.top = image_frame_elem.offsetHeight/2 + 'px';
+    horizontal_line_elem.style.width = parseInt(intro_elem_style.paddingLeft.slice(0,-2)) + parseInt(intro_para_style.marginLeft.slice(0,-2)) + 3 + 'px';
+    console.log(parseInt(intro_elem_style.paddingLeft.slice(0,-2)) + 'px');
+
+    let caption_elem_style = getComputedStyle(home_section_content.children[0].children[1]);
+    vertical_line_elem.style.top = image_frame_elem.offsetHeight - 2;
+    vertical_line_elem.style.left = image_frame_elem.offsetWidth/2;
+    vertical_line_elem.style.height =  parseInt(caption_elem_style.marginTop.slice(0, -2)) + 3 + 'px';
+    console.log(vertical_line_elem.style.height);
+}
+
+window.addEventListener('load', setHomeSectionLines);
+window.addEventListener('resize', setHomeSectionLines);
 // ******************************************************************************************************
 //**************************************** Experience Timeline  *****************************************
 // ******************************************************************************************************
@@ -46,21 +71,27 @@ function setTimelineElementDimensions(experience_entry){
     
     image_elem.style.height = image_width + 'px';
     
-    console.log(timeline_elem.children[2]);
+    // console.log(timeline_elem.children[2]);
 
     bottom_line_elem.style.height = '0px';             //set the timeline height to 0 to let description div adjust its height
     description_elem = experience_entry.children[2]; //get updated description div
 
-    timeline_elem.style.height = Math.max(image_width*1.7 , date_elem.offsetHeight, description_elem.offsetHeight) + 'px';
+    timeline_elem.style.height = Math.max(image_width*1.7 , date_elem.offsetHeight, description_elem.offsetHeight) + 'px';   //Adjusting the size of timeline div
     bottom_line_elem.style.height = Math.max(image_width*0.7, timeline_elem.offsetHeight-image_width) + 'px';
 
-    let image_margin = timeline_elem.offsetWidth - image_width;
+    let image_margin = timeline_elem.offsetWidth - image_width;     //Adjusting position and size of the horzontal line
+    let description_elem_style = getComputedStyle(description_elem.children[0]);
+    horizontal_line_elem.style.width = (image_margin/2 + parseInt(description_elem_style.marginLeft.slice(0, -2))) + 'px';
     horizontal_line_elem.style.left = (image_width + image_margin/2) + 'px';
     horizontal_line_elem.style.top = image_width/2 + 'px';
 
-    date_elem.style.paddingTop = image_width/2 + 'px';
-
-    console.log(timeline_elem.offsetHeight, timeline_elem.children[0].offsetHeight, timeline_elem.children[1].offsetHeight );
+    date_elem.style.paddingTop = image_width/2 + 'px';      //Adjusting position of the date div
+    let date_horizontal_line = date_elem.children[0].children[0];
+    date_horizontal_line.style.top = date_elem.children[0].offsetHeight/2 + 'px';
+    date_horizontal_line.style.left = date_elem.children[0].offsetWidth - 2 + 'px';
+    date_horizontal_line.style.width = image_margin/2 + (date_elem.offsetWidth - date_elem.children[0].offsetWidth) + 'px';
+    console.log(date_elem.children[0].offsetWidth);
+    // console.log(timeline_elem.offsetHeight, timeline_elem.children[0].offsetHeight, timeline_elem.children[1].offsetHeight );
 }
 
 function adjustTimeline(){

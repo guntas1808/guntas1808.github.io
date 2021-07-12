@@ -1,6 +1,6 @@
 #education-tab-content{
     flex-direction: column;
-    padding-bottom: 0;
+    /* padding-bottom: 0; */
 }
 
 #education-tab-content .education-content{
@@ -19,6 +19,7 @@
     background-position: center;
     background-size: cover;
     display: flex;
+    border: 2px solid var(--base-color-dark);
 }
 
 .education-entry-content{

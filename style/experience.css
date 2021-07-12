@@ -98,6 +98,16 @@
     transform: translateY(-50%);
     padding: 0.5rem 0;
     background-color: var(--base-color-dark-faded);
+    border: 2px solid var(--base-color-dark);
+    position: relative;
+}
+
+.experience-entry .date p svg{
+    position: absolute;
+    stroke: var(--base-color-dark);
+    stroke-width: 3px;
+    height: 3px;
+    transform: translateY(-100%);
 }
 
 .experience-entry .timeline{
@@ -143,7 +153,7 @@
     height: 100%;
     stroke: var(--base-color-dark);
     fill: var(--base-color-dark);
-    stroke-width: 2px;
+    stroke-width: 3px;
 }
 
 /* #iitkcse .bottom-line svg{
@@ -152,20 +162,20 @@
 
 .timeline .horizontal-line{
     position: absolute;
-    height: 2px;
+    height: 3px;
     width: 3rem;
     left: 0;
     top: 0;
     stroke: var(--base-color-dark);
-    stroke-width: 2px;
+    stroke-width: 3px;
     transform: translateY(-50%);
 }
 
-.experience-entry .entry-description{
-    margin: 0 1rem 1rem 1rem;
-    padding: 1rem;
+.entry-description .entry-description-text{
     border: 2px solid var(--base-color-dark);
     background-color: var(--base-color-dark-faded);
+    margin: 0 1rem 1rem 1rem;
+    padding: 1rem;
 }
 
 .entry-description h1{

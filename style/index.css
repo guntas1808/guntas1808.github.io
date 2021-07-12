@@ -178,11 +178,13 @@
     box-sizing: border-box;
     margin: auto;
     fill: var(--base-font-color);
+    transition: fill 0.4s;
 }
 
 .header .tab-name{
     height: 30%;
     font-size: 1.5vh;
+    transition: color 0.4s;
 }
 
 .header .tab.active{
@@ -201,7 +203,7 @@
 }
 
 .header .tab.active:hover{
-    border-bottom: 2px solid var(--base-color-lighter);
+    border-bottom: 2px solid var(--base-color-light);
 }
 
 /* Sections */
@@ -210,6 +212,10 @@
     height: var(--content-height);
     overflow: hidden;
     position: relative;
+    background-image: url('../images/main-background.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .sections-container{
@@ -232,10 +238,6 @@
     padding: 1rem 2rem;
     overflow-y: auto;
     overflow-x: hidden;
-    background-image: url('../images/main-background.jpeg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .section.show-section {

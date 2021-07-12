@@ -11,7 +11,6 @@
 #home-tab-content .image{
     width: 25%;
     height: 100%;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
 }
@@ -19,9 +18,8 @@
 #home-tab-content .image .image-frame{
     width: 100%;
     margin-top: auto;
-    overflow: hidden;
     position: relative;
-    border: 3px solid var(--base-color-dark);
+    border: 2px solid var(--base-color-dark);
     border-radius: 50%;
     opacity: 0;
     background-image: url(../images/IMG_6334.JPG);
@@ -30,20 +28,33 @@
     background-size: cover;
 }
 
-#home-tab-content .image img{
-    width: initial;
+#home-tab-content .image .image-frame svg{
     position: absolute;
-    top: 0;
-    left: 0;
+    stroke: var(--base-color-dark);
+    stroke-width: 3px;
+}
+
+#home-tab-content .image .image-frame .horizontal{
+    height: 3px;
+    width: 100vh;
+    transform: translateY(-50%);
+}
+
+#home-tab-content .image .image-frame .vertical{
+    width: 3px;
+    height: 100vh;
+    transform: translateX(-50%);
 }
 
 #home-tab-content .image .caption{
     /* display: none; */
-    padding-top: 1rem;
+    margin-top: 1rem;
     width: 100%;
     margin-bottom: auto;
     opacity: 0;
     animation-delay: 0.3s;
+    background-color: var(--base-color-dark-faded);
+    border: 2px solid var(--base-color-dark);
 }
 
 
@@ -53,6 +64,7 @@
 }
 
 #home-tab-content .image .caption .sub{
+    padding: 0 0 1rem 0;
     color: var(--base-color-lighter);
     font-size: 0.9rem;
 }
@@ -70,6 +82,7 @@
     font-size: 0;
     color: var(--base-color-contrast);
     text-align: left;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .letter-pop-animate{
@@ -112,6 +125,7 @@
     font-size: 1.1rem;
     line-height: 1.5;
     background-color: var(--base-color-dark-faded);
+    border: 2px solid var(--base-color-dark);
 }
 
 #home-tab-content #intro-p1{
@@ -147,7 +161,7 @@
     transform: translateX(9rem);
 }
 
-.social-links-animate{
+#home-tab-content .social-links-animate{
     animation: social-links-enter 0.7s ease-out 1.5s, social-links-diverge 0.7s ease-out 2.2s;
     animation-fill-mode: both;
 }
